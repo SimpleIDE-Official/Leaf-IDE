@@ -9,7 +9,8 @@
         android:id="@+id/welcomeFragment"
         android:name="com.mucheng.leafide.fragment.setup.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/activity_setup" />
+        tools:layout="@layout/fragment_welcome" />
+
     <action
         android:id="@+id/action_global_welcomeFragment"
         app:destination="@id/welcomeFragment"
@@ -21,7 +22,9 @@
     <fragment
         android:id="@+id/permissionRequestFragment"
         android:name="com.mucheng.leafide.fragment.setup.PermissionRequestFragment"
-        android:label="PermissionRequestFragment" />
+        android:label="PermissionRequestFragment"
+        tools:layout="@layout/fragment_permission_request" />
+
     <action
         android:id="@+id/action_global_permissionRequestFragment"
         app:destination="@id/permissionRequestFragment"
@@ -29,10 +32,12 @@
         app:exitAnim="@anim/nav_default_exit_anim"
         app:popEnterAnim="@anim/nav_default_pop_enter_anim"
         app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
     <fragment
         android:id="@+id/launcherOptionsFragment"
         android:name="com.mucheng.leafide.fragment.setup.LauncherOptionsFragment"
-        android:label="LauncherOptionsFragment" />
+        android:label="LauncherOptionsFragment"
+        tools:layout="@layout/fragment_launcher_options" />
 
     <action
         android:id="@+id/action_global_launcherOptionsFragment"

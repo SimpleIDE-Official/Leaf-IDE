@@ -53,4 +53,12 @@ class SetupViewModel : ViewModel() {
         }
     }
 
+    fun canGotoPrev(): Boolean {
+        return pageIndexMutableStateFlow.value != SetupPage.WelcomePage
+    }
+
+    fun canGotoNext(): Boolean {
+        return pageIndexMutableStateFlow.value != SetupPage.LauncherOptionsPage
+    }
+
 }

@@ -5,15 +5,27 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:defaultNavHost="false"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="8dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_main" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="false"
+            app:navGraph="@navigation/nav_main" />
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/prevButton"

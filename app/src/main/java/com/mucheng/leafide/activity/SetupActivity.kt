@@ -2,6 +2,7 @@ package com.mucheng.leafide.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.mucheng.leafide.R
@@ -57,6 +58,14 @@ class SetupActivity : BaseActivity() {
                         viewBinding.nextButton.setIconResource(R.drawable.baseline_arrow_forward_24)
                     }
                 }
+            }
+        }
+
+        onBackPressedDispatcher.addCallback {
+            if (viewModel.canGotoPrev()) {
+                viewModel.gotoPrev()
+            } else {
+                finish()
             }
         }
 
