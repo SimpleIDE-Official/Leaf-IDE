@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.mucheng.leafide.fragment.setup.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/activity_setup" />
+    <action
+        android:id="@+id/action_global_welcomeFragment"
+        app:destination="@id/welcomeFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/permissionRequestFragment"
+        android:name="com.mucheng.leafide.fragment.setup.PermissionRequestFragment"
+        android:label="PermissionRequestFragment" />
+    <action
+        android:id="@+id/action_global_permissionRequestFragment"
+        app:destination="@id/permissionRequestFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/launcherOptionsFragment"
+        android:name="com.mucheng.leafide.fragment.setup.LauncherOptionsFragment"
+        android:label="LauncherOptionsFragment" />
+
+    <action
+        android:id="@+id/action_global_launcherOptionsFragment"
+        app:destination="@id/launcherOptionsFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+
+</navigation>
