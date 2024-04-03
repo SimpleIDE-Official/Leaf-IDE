@@ -23,7 +23,6 @@ class SetupActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivitySetupBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-        insetsSystemBar(viewBinding.root)
 
         val navController = supportFragmentManager.findNavController(R.id.fragmentContainerView)
         lifecycleScope.launch {
