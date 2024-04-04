@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.mucheng.leafide.R
 import com.mucheng.leafide.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -22,7 +24,11 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
 
+        viewBinding.nextButton.setOnClickListener {
+            navController.navigate(R.id.action_welcomeFragment_to_permissionRequestFragment)
+        }
     }
 
 }

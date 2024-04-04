@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.mucheng.leafide.R
 import com.mucheng.leafide.databinding.FragmentPermissionRequestBinding
 
 class PermissionRequestFragment : Fragment() {
@@ -23,7 +25,13 @@ class PermissionRequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).setSupportActionBar(viewBinding.toolbar)
+        val navController = findNavController()
+        viewBinding.prevButton.setOnClickListener {
+            navController.navigateUp()
+        }
+        viewBinding.nextButton.setOnClickListener {
+            navController.navigate(R.id.action_permissionRequestFragment_to_launcherOptionsFragment)
+        }
     }
 
 }

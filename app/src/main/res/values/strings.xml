@@ -2,4 +2,5 @@
     <string name="app_name" translatable="false">Leaf IDE</string>
     <string name="setup_welcome">Welcome</string>
     <string name="setup_description">Simple user interface, smart completion, and smooth animation are all at your fingertips.</string>
+    <string name="permission_request">Permission Request</string>
 </resources>
