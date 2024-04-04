@@ -2,4 +2,9 @@
     <string name="setup_description">简洁的用户界面，灵动的补全，平滑的动画跃然指上。</string>
     <string name="setup_welcome">欢迎</string>
     <string name="permission_request">权限申请</string>
+    <string name="storage_permission">存储权限</string>
+    <string name="storage_permission_description">允许软件对内部存储进行读写。</string>
+    <string name="network_permission">网络权限</string>
+    <string name="network_permission_description">拥有完全的网络访问权限。</string>
+    <string name="core_permission_denied">核心权限被拒绝，无法使用此软件。</string>
 </resources>

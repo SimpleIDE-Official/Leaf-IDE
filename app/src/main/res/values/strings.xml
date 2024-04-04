@@ -3,4 +3,9 @@
     <string name="setup_welcome">Welcome</string>
     <string name="setup_description">Simple user interface, smart completion, and smooth animation are all at your fingertips.</string>
     <string name="permission_request">Permission Request</string>
+    <string name="storage_permission">Storage Permission</string>
+    <string name="storage_permission_description">Allows software to read and write to internal storage.</string>
+    <string name="network_permission">Network Permission</string>
+    <string name="network_permission_description">Have full network access.</string>
+    <string name="core_permission_denied">Core permission denied to use this software.\nCore permission denied to use this software</string>
 </resources>
