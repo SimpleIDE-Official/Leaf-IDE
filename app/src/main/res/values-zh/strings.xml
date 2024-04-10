@@ -7,4 +7,5 @@
     <string name="network_permission">网络权限</string>
     <string name="network_permission_description">拥有完全的网络访问权限。</string>
     <string name="core_permission_denied">核心权限被拒绝，无法使用此软件。</string>
+    <string name="launcher_options">启动器选项</string>
 </resources>

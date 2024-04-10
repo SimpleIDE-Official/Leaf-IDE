@@ -16,7 +16,8 @@
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/enter_anim"
-            app:popExitAnim="@anim/exit_anim" />
+            app:popExitAnim="@anim/exit_anim"
+            app:popUpTo="@id/welcomeFragment" />
     </fragment>
 
     <fragment
@@ -27,6 +28,7 @@
         <action
             android:id="@+id/action_permissionRequestFragment_to_launcherOptionsFragment"
             app:destination="@id/launcherOptionsFragment"
+            app:popUpTo="@id/permissionRequestFragment"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/enter_anim"

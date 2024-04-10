@@ -77,6 +77,7 @@ class PermissionRequestFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
+        viewBinding.recyclerView.setHasFixedSize(true)
         viewBinding.recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         viewBinding.recyclerView.adapter = permissionRequestCardAdapter

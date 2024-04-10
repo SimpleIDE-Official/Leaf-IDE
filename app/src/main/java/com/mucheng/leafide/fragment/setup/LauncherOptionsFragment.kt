@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.mucheng.leafide.databinding.FragmentLauncherOptionsBinding
 
 class LauncherOptionsFragment : Fragment() {
@@ -22,6 +23,13 @@ class LauncherOptionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
+        viewBinding.prevButton.setOnClickListener {
+            navController.navigateUp()
+        }
+        viewBinding.nextButton.setOnClickListener {
+
+        }
     }
 
 }

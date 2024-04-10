@@ -8,4 +8,5 @@
     <string name="network_permission">Network Permission</string>
     <string name="network_permission_description">Have full network access.</string>
     <string name="core_permission_denied">Core permission denied to use this software.\nCore permission denied to use this software</string>
+    <string name="launcher_options">Launcher Options</string>
 </resources>
