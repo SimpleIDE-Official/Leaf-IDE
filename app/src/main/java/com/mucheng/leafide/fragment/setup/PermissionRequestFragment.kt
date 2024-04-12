@@ -1,21 +1,15 @@
 package com.mucheng.leafide.fragment.setup
 
-import android.Manifest
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mucheng.leafide.R
 import com.mucheng.leafide.adapter.PermissionRequestCardAdapter
 import com.mucheng.leafide.bean.ui.PermissionRequestCard
 import com.mucheng.leafide.databinding.FragmentPermissionRequestBinding
-import com.mucheng.leafide.util.toast
-import es.dmoral.toasty.Toasty
 
 class PermissionRequestFragment : Fragment() {
 
@@ -50,30 +44,7 @@ class PermissionRequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = findNavController()
         setupRecyclerView()
-
-        val activityResultLauncher = registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()
-        ) {
-            if (!it.values.contains(false)) {
-                navController.navigate(R.id.action_permissionRequestFragment_to_launcherOptionsFragment)
-            } else {
-                toast(requireContext(), R.string.core_permission_denied)
-            }
-        }
-
-        viewBinding.prevButton.setOnClickListener {
-            navController.navigateUp()
-        }
-        viewBinding.nextButton.setOnClickListener {
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                )
-            )
-        }
     }
 
     private fun setupRecyclerView() {

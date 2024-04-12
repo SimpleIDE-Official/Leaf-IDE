@@ -47,49 +47,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="?attr/colorSurface">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/prevButton"
-            style="@style/Widget.Material3.Button.IconButton.Filled"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_margin="15dp"
-            app:icon="@drawable/baseline_arrow_back_24"
-            app:iconGravity="textEnd"
-            app:iconSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/linearProgressIndicator"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:max="3"
-            android:progress="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/nextButton"
-            style="@style/Widget.Material3.Button.IconButton.Filled"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_margin="15dp"
-            app:icon="@drawable/baseline_arrow_forward_24"
-            app:iconGravity="textEnd"
-            app:iconSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
