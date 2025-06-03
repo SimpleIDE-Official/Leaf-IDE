@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard"
+  ],
+  "forkProcessing": "enabled",
+  "automerge": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": "after 10pm on sunday"
+    "automerge": false,
+    "automergeType": "pr",
+    "platformAutomerge": false
+  },
+  "includeForks": true
+  "timezone": "America/New_York",
+  "schedule": "before 5am every weekday",
+  "packageRules": [{
+    "packageNames": ["aws-sdk"],
+    "schedule": "before 5am every wednesday"
+  }]
+}
