@@ -12,7 +12,7 @@
     "automergeType": "pr",
     "platformAutomerge": false
   },
-  "includeForks": true
+  "includeForks": true,
   "timezone": "America/New_York",
   "schedule": "before 5am every weekday",
   "packageRules": [{
