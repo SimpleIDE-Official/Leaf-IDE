@@ -13,11 +13,14 @@
     "automergeType": "pr",
     "platformAutomerge": false
   },
-  "includeForks": true,
   "timezone": "America/New_York",
   "schedule": "before 5am every weekday",
-  "packageRules": [{
-    "packageNames": ["aws-sdk"],
-    "schedule": "before 5am every wednesday"
-  }]
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "aws-sdk"
+      ],
+      "schedule": "before 5am on wednesday"
+    }
+  ]
 }
