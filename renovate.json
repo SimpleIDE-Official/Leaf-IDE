@@ -5,6 +5,7 @@
     ":dependencyDashboard"
   ],
   "forkProcessing": "enabled",
+  "automerge": false,
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": "after 10pm on sunday",
