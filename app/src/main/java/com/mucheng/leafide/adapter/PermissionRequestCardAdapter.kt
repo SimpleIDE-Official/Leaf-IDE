@@ -9,7 +9,7 @@ import com.mucheng.leafide.databinding.LayoutPermissionRequestCardBinding
 
 class PermissionRequestCardAdapter(
     private val context: Context,
-    private val permissionRequestCards: List<PermissionRequestCard>
+    private val permissionRequestCards: List<PermissionRequestCard>,
 ) : RecyclerView.Adapter<PermissionRequestCardAdapter.ViewHolder>() {
 
     private val inflater by lazy { LayoutInflater.from(context) }
@@ -32,5 +32,4 @@ class PermissionRequestCardAdapter(
         viewBinding.title.setText(permissionRequestCard.titleRes)
         viewBinding.description.setText(permissionRequestCard.descriptionRes)
     }
-
 }

@@ -28,24 +28,20 @@ class SetupActivity : BaseActivity() {
 
     private lateinit var fragments: List<Fragment>
 
-    private val activityResultLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
-    ) {
-        if (!it.values.contains(false)) {
-            lifecycleScope.launch {
-                viewModel.intent.send(SetupIntent.Next)
+    private val activityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            if (!it.values.contains(false)) {
+                lifecycleScope.launch { viewModel.intent.send(SetupIntent.Next) }
+            } else {
+                Snackbar.make(
+                        viewBinding.root,
+                        R.string.core_permission_denied,
+                        Snackbar.LENGTH_SHORT,
+                    )
+                    .setAnchorView(viewBinding.nextButton)
+                    .show()
             }
-        } else {
-            Snackbar
-                .make(
-                    viewBinding.root,
-                    R.string.core_permission_denied,
-                    Snackbar.LENGTH_SHORT
-                )
-                .setAnchorView(viewBinding.nextButton)
-                .show()
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,11 +49,8 @@ class SetupActivity : BaseActivity() {
         setContentView(viewBinding.root)
 
         if (supportFragmentManager.fragments.isEmpty()) {
-            fragments = listOf(
-                WelcomeFragment(),
-                PermissionRequestFragment(),
-                LauncherOptionsFragment()
-            )
+            fragments =
+                listOf(WelcomeFragment(), PermissionRequestFragment(), LauncherOptionsFragment())
 
             supportFragmentManager
                 .beginTransaction()
@@ -65,7 +58,8 @@ class SetupActivity : BaseActivity() {
                     for (fragment in fragments) {
                         it.add(R.id.fragmentContainerView, fragment)
                     }
-                }.commit()
+                }
+                .commit()
         } else {
             fragments = supportFragmentManager.fragments
         }
@@ -105,16 +99,15 @@ class SetupActivity : BaseActivity() {
                                 transaction.show(fragment)
                             }
                         }
-                    }.commit()
+                    }
+                    .commit()
 
                 viewBinding.linearProgressIndicator.progress = it.selectedIndex + 1
             }
         }
 
         viewBinding.prevButton.setOnClickListener {
-            lifecycleScope.launch {
-                viewModel.intent.send(SetupIntent.Prev)
-            }
+            lifecycleScope.launch { viewModel.intent.send(SetupIntent.Prev) }
         }
 
         viewBinding.nextButton.setOnClickListener {
@@ -123,7 +116,7 @@ class SetupActivity : BaseActivity() {
                     activityResultLauncher.launch(
                         arrayOf(
                             Manifest.permission.READ_EXTERNAL_STORAGE,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         )
                     )
                 } else {
@@ -133,10 +126,7 @@ class SetupActivity : BaseActivity() {
         }
 
         onBackPressedDispatcher.addCallback {
-            lifecycleScope.launch {
-                viewModel.intent.send(SetupIntent.Prev)
-            }
+            lifecycleScope.launch { viewModel.intent.send(SetupIntent.Prev) }
         }
     }
-
 }

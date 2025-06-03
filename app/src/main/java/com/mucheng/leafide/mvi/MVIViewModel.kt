@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
 interface UIState
+
 interface UIIntent
 
 @Suppress("LeakingThis")
@@ -24,11 +25,7 @@ abstract class MVIViewModel<S : UIState, I : UIIntent> : ViewModel() {
     val intent: Channel<I> = Channel(Channel.UNLIMITED)
 
     init {
-        viewModelScope.launch {
-            intent.consumeAsFlow().collect {
-                handleIntent(it)
-            }
-        }
+        viewModelScope.launch { intent.consumeAsFlow().collect { handleIntent(it) } }
     }
 
     protected abstract fun handleIntent(intent: I)
@@ -36,5 +33,4 @@ abstract class MVIViewModel<S : UIState, I : UIIntent> : ViewModel() {
     protected fun updateState(state: S) {
         mutableStateFlow.value = state
     }
-
 }

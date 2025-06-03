@@ -22,21 +22,21 @@ class PermissionRequestFragment : Fragment() {
                 PermissionRequestCard(
                     iconRes = R.drawable.baseline_storage_24,
                     titleRes = R.string.storage_permission,
-                    descriptionRes = R.string.storage_permission_description
+                    descriptionRes = R.string.storage_permission_description,
                 ),
                 PermissionRequestCard(
                     iconRes = R.drawable.baseline_wifi_24,
                     titleRes = R.string.network_permission,
-                    descriptionRes = R.string.network_permission_description
-                )
-            )
+                    descriptionRes = R.string.network_permission_description,
+                ),
+            ),
         )
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         viewBinding = FragmentPermissionRequestBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -53,5 +53,4 @@ class PermissionRequestFragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         viewBinding.recyclerView.adapter = permissionRequestCardAdapter
     }
-
 }

@@ -6,11 +6,12 @@ import kotlinx.coroutines.launch
 data class SetupState(
     val selectedIndex: Int = 0,
     val shouldFinishActivity: Boolean = false,
-    val shouldStartActivity: Boolean = false
+    val shouldStartActivity: Boolean = false,
 ) : UIState
 
 sealed class SetupIntent : UIIntent {
     data object Next : SetupIntent()
+
     data object Prev : SetupIntent()
 }
 
@@ -50,5 +51,4 @@ class SetupViewModel : MVIViewModel<SetupState, SetupIntent>() {
             }
         }
     }
-
 }

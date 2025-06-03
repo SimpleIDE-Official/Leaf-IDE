@@ -9,12 +9,10 @@ class AppContext : Application() {
         @JvmStatic
         lateinit var instance: AppContext
             private set
-
     }
 
     override fun onCreate() {
         super.onCreate()
         instance = this
     }
-
 }

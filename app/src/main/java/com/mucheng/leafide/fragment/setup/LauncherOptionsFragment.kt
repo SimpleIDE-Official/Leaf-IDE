@@ -14,7 +14,7 @@ class LauncherOptionsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         viewBinding = FragmentLauncherOptionsBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -23,5 +23,4 @@ class LauncherOptionsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
 }
